@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    .form-popup {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="btn btn-primary" onclick="openForm()">Add Employee</button></br>
+
+  <table class="table" id="myList">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+  <!-- <div class="form-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+      <h1>Login</h1>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+  
+      <button type="submit" class="btn">Login</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div> -->
+
+  <!-- <div class="container form-popup" id="myForm" style="width: 30%; border: 3px solid black; padding: 10px;"> -->
+  <form action="/action_page.php" id="myForm" class="form-container container form-popup" style="width: fit-content; max-height: fit-content; border: 1px solid rgb(109, 105, 105);">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input type="email" onblur="data()" class="form-control col-xs-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    </div>
+
+
+    <div class="dropdown show">
+      <label for="selectgender">Gender</label></br>
+      <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        select gender
+      </a>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#">Male</a>
+        <a class="dropdown-item" href="#">Female</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div>
+
+    <div class="form-group col-xs-3">
+      <label for="exampleInputPassword1">Designation</label>
+      <input type="text" class="form-control col-xs-3" id="exampleInputPassword1" placeholder="Designation">
+    </div>
+
+    <div class="form-group col-xs-3">
+      <label for="exampleInputPassword1">City</label>
+      <input type="text" class="form-control col-xs-3" id="exampleInputPassword1" placeholder="City">
+    </div>
+
+    <button type="button" onclick="closeForm()" class=" btn btn-success">Save</button>
+  </form>
+
+  <button type="button" onclick="insertTablero()">insert</button>
+
+
+  <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+
+    // function data() {
+    //   var name = document.getElementById('exampleInputEmail1').value;
+    //   var designation = document.getElementById('exampleInputEmail1').value;
+    //   var city = document.getElementById('exampleInputEmail1').value;
+    //   // console.log(x)
+    //   let arr = [name, designation, city];
+    //   for(let i = 0 ; i < arr.length ; i++) {
+
+    //     var node = document.createElement("LI");
+    //   //   var textnode = document.createTextNode(`<tr>
+    //   //   <th scope="row">1</th>
+    //   //   <td>${arr[            ]}</td>
+    //   //   <td>Otto</td>
+    //   //   <td>@mdo</td>
+    //   // </tr>`);
+    //     node.appendChild(textnode);
+    //     document.getElementById("myList").appendChild(node);
+
+    //   // })
+
+    // }
+
+    function insertTablero(){
+      var createNew = document.getElementById("table");
+      createNew.innerHTML = `
+      <tr>
+        <th scope="row">1</th>
+        <td>Prajakt</td>
+        <td>Chatur</td>
+        <td>@dd</td>
+      </tr>
+      `
+
+      document.body.appendChild(createNew)
+    }
+
+    
+
+    // function 
+    // const arrayObject = [
+    //     {Title: 'Best coutry to visit in the word 2021' , description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi rerum facilis, quidem provident minus fugiat, voluptas esse in iure impedit itaque excepturi reprehenderit, at accusamus. Asperiores odit id excepturi dolorum.', button:'read more'},
+    //     {Title: 'Best breakfasr in 2022' , description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi rerum facilis, quidem provident minus fugiat, voluptas esse in iure impedit itaque excepturi reprehenderit, at accusamus. Asperiores odit id excepturi dolorum.', button:'read more'},
+    //     {Title: 'best places to visit in india 2021' , description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi rerum facilis, quidem provident minus fugiat, voluptas esse in iure impedit itaque excepturi reprehenderit, at accusamus. Asperiores odit id excepturi dolorum.', button:'read more'}
+    // ]
+
+    // const userTabble = [
+    //     {name : 'Prajakt' , last:'Chatur' , handle: 'prajaktchatur3@gmail.com'},
+    //     {name : 'Manas' , last:'Chatur' , handle: 'manaschatur3@gmail.com'},
+    //     {name : 'Nihal' , last:'Dhole' , handle: 'prajaktchatur3@gmail.com'},
+    //     {name : 'Rohit' , last:'Hasure' , handle: 'prajaktchatur3@gmail.com'}
+    // ]
+
+    //     var createForst = document.createElement("DIV");
+    //     createForst.innerHTML=`<thead>
+    //     <tr>
+    //       <th scope="col">#</th>
+    //       <th scope="col">First</th>
+    //       <th scope="col">Last</th>
+    //       <th scope="col">Handle</th>
+    //     </tr>
+    //   </thead>`;
+    //   document.body.appendChild(cre)
+    //   userTabble.map(blogs => {
+    //       var create = document.createElement("DIV");
+    //       // let cnt = 0;
+    //       create.innerHTML = 
+    //       `
+
+    //     <table class="table">
+
+    //   <tbody>
+    //     <tr >
+    //       <th scope="row">1</th>
+    //       <td>${blogs.name}</td>
+    //       <td>${blogs.last}</td>
+    //       <td>@${blogs.handle}</td>
+    //       <td><a class="btn btn-success">Delete</a></td>
+    //       <td><a class="btn btn-success">Eddit</a></td>
+    //     </tr>
+
+    //   </tbody>
+    // </table>`
+    // document.body.appendChild(create)
+    //   })
+  </script>
+</body>
+
+</html>
